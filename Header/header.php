@@ -16,7 +16,7 @@
                     <li><a href="../Index/index.php">ACASA</a></li>
                     <li><a href="../Item/itemTest.php">PRODUSE</a></li>
                     <li><a href="../Egypt/Egypt.php">DESPRE</a></li>
-                    <li><a href="../Conectare/cnn.php">CONECTARE</a></li>
+                    <li><a href="../Conectare/login_cont.php">CONECTARE</a></li>
                 </ul>
             </nav>
         </div>

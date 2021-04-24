@@ -77,19 +77,8 @@ if ($eroareVerificare=="OK")
 
 <?php include "../Header/header.php" ?>
 <div class="container">
-    <div class="log">
-        <form class="log1" method="post">
-            <label>Email: <br>
-                <input type="email" name="email" required>
-            </label> <br>
-            <label>Parola:<br>
-                <input type="password" name="psw" required>
-            </label> <br>
-            <input type="submit">
-        </form>
-    </div>
     <div class="reg">
-        <h1>Nu ai cont? Inregistreaza-te acum:</h1>
+        <h1>Creeaza cont:</h1>
         <form class="reg1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <label>Nume:<br>
                 <input type="text" name="nume" value="<?php echo $nume; ?>">
@@ -105,13 +94,14 @@ if ($eroareVerificare=="OK")
             <p><?php echo $eroarePsw; ?></p> <br>
             <input type="submit">
         </form>
+        <h1>Ai deja cont? <a href="login_cont.php">Conecteaza-te acum:</a></h1>
     </div>
 </div>
 
 <?php
 echo '<h3 class="error">'.$eroareVerificare."</h3>";
 //if (!(empty($name) || empty($email)) && (empty($nameErr)&&empty($emailErr)&&empty($existErr)))
-if (empty($nameErr)&&empty($emailErr)&&empty($existErr))
+if (empty($eroareNume)&&empty($eroareEmail)&&empty($eroarePsw))
 { //toate condittile sunt indeplinite //
     //echo '<h3 style="text-align:right color:red" >Acum aveti cont! Logativa ca si Utilizator</h3>';
     // header("Location: login_user.php"); // nu se folosete pt. a putea afisa rezutatul crearii de cont

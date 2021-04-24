@@ -1,8 +1,19 @@
 .log {
     width: 100%;
-    height: 250px;
+    height: calc(100vh - 120px);
     background-color: rgb(23, 26, 33);
     border-bottom: 5px solid bisque;
+}
+
+.log h1 {
+    color: bisque;
+    font-size: 25px;
+    padding-left: 50px;
+    padding-top: 25px;
+}
+
+.log a{
+    color: forestgreen;
 }
 
 .log .log1 label {
@@ -16,9 +27,13 @@
     padding-top: 72px;
 }
 
+.log1 p{
+    color: bisque;
+}
+
 .reg {
     width: 100%;
-    height: calc(100vh - 120px - 250px);
+    height: calc(100vh - 120px);
     background-color: rgb(23, 26, 33);
 }
 
@@ -27,6 +42,10 @@
     font-size: 25px;
     padding-left: 50px;
     padding-top: 25px;
+}
+
+.reg a{
+    color: forestgreen;
 }
 
 .reg .reg1 label {
