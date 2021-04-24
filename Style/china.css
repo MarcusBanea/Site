@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+}
+
+
+.container-fluid {
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+.container-fluid #img1 {
+    width: 1632px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Imagini/China/MareleZid.jpg");
+    height: 100vh;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: right;
+}
+
+.container-fluid #img2 {
+    width: 1632px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Imagini/China/YinYang.jpg");
+    height: 100vh;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: right;
+}
+
+.container-fluid #img3 {
+    width: 1632px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Imagini/China/Bonzai.jpg");
+    height: 100vh;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: right;
+}
+
+
+
+#img1 h1 {
+    color: bisque;
+    font-size: 75px;
+    font-family: "Niconne", cursive;
+}
+
+
+.descriere-pagina {
+    display: block;
+    max-width: 950px;
+}
+
+.descriere-pagina .text {
+    display: block;
+    color: bisque;
+    font-size: 20px;
+    max-width: 1000px;
+}
+
+.descriere-pagina .titlu h1{
+    text-align: center;
+}
+
+.descriere-pagina .text p{
+    margin-bottom: 70px;
+    text-align: center;
+}
+
+.text::first-letter {
+    font-size: 40px;
+    font-family: "Niconne", cursive;
+}
+
+#img1 .descriere-pagina {
+    display: flex;
+    float: left;
+    margin-left: 50px;
+    margin-top: 150px;
+
+}
+
+.ch2 {
+    padding-left: 200px;
+}
+
+.jurju {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#img2 .descriere-pagina {
+    display: flex;
+    float: right;
+    margin-right: 150px;
+    margin-top: 150px;
+}
+
+
+#img2 .descriere-pagina .imag img{
+    //clip-path: polygon(0% 15%, 10% 11%, 15% 0%, 85% 0%, 91% 11%, 100% 15%, 100% 85%, 90% 91%, 85% 100%, 15% 100%, 11% 90%, 0% 85%);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    width: 250px;
+    height: 350px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+#img3 .descriere-pagina {
+    display: flex;
+    float: left;
+    width: 100%;
+    margin-left: 50px;
+    margin-top: 150px;
+}
+
+
+
+.slideshow {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //background: black;
+}
+
+.slider {
+    width: 450px;
+    height: 850px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slides {
+    width: 500%;
+    height: 850px;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img {
+    width: 450px;
+    height: 850px;
+}
+
+.navigation-manual {
+    position: absolute;
+    width: 450px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.manual-btn {
+    border: 3px solid aqua;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right:40px;
+}
+
+.manual-btn:hover {
+    background: black;
+}
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+    margin-left: -60%;
+}
+
+/*
+
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 250px;
+    justify-content: center;
+}
+
+.navigation-auto div {
+    border: 2px solid aqua;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background: aqua;
+    //margin-left: 0;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background: aqua;
+    //margin-left: -250px;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background: aqua;
+    //margin-left: -500px;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background: aqua;
+    //margin-left: -750px;
+}
+
+*/

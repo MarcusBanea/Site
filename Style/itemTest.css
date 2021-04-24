@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+}
+
+
+#test1 .container-fluid {
+    width: 100%;
+    height: 2000vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../Imagini/Antique-Item.jpg);
+    background-size: auto;
+}
+
+
+.c1 {
+    text-align: center;
+    width: 85%;
+    height: 80vh;
+    float: right;
+}
+
+
+.c11 {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 3%;
+    height: 98%;
+    background-color: honeydew;
+    border-radius: 20px;
+    border: 3px solid #800606;
+}
+
+
+.c11 h1 {
+    padding-top: 1%;
+    font-family: Cambria;
+}
+
+.c11 p {
+    padding-top: 1%;
+    line-height: 110%;
+    font-family: Cambria;
+}
+
+.c11 #suma {
+    font-size: 200%
+}
+
+.c11 input {
+    width: 200px;
+}
+
+.c11 img{
+    margin-top: 15px;
+    width: 600px;
+    height: 600px;
+}
+
+.c11 button {
+    cursor: pointer;
+}
+
+

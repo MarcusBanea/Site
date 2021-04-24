@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+}
+
+.container-fluid {
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+.container-fluid #img1 {
+    width: 1632px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Imagini/Maya/Piramida.jpg");
+    height: 100vh;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: right;
+}
+
+.container-fluid #img2 {
+    width: 1632px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Imagini/Maya/MayaCalendar.jpg");
+    height: 100vh;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: right;
+
+}
+
+.container-fluid #img3 {
+    width: 1632px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Imagini/Maya/MayaArt.jpg");
+    height: 100vh;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: right;
+}
+
+.logo img{
+    width: 75px;
+    height: auto;
+    margin-left: 25px;
+}
+
+.bara-navigatie {
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    max-width: 1900px;
+    margin: auto;
+    border-bottom: 7px solid bisque;
+}
+
+.bara-navigatie nav {
+    flex: 1;
+}
+
+.bara-navigatie ul {
+    float: right;
+    list-style-type: none;
+    margin-right: 15px
+}
+
+
+.bara-navigatie nav ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+.bara-navigatie nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 20px;
+    border: 1px solid #fff;
+    transition: 0.6s ease;
+    font-size: 13px;
+}
+
+.bara-navigatie nav ul li a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+#img1 h1 {
+    color: bisque;
+    font-size: 75px;
+    font-family: "Niconne", cursive;
+}
+
+
+.descriere-pagina {
+    display: block;
+    max-width: 950px;
+}
+
+.descriere-pagina .text {
+    display: block;
+    color: bisque;
+    font-size: 20px;
+    max-width: 1000px;
+}
+
+.descriere-pagina .titlu h1{
+    text-align: center;
+}
+
+.descriere-pagina .text p{
+    margin-bottom: 70px;
+    text-align: center;
+}
+
+.text::first-letter {
+    font-size: 40px;
+    font-family: "Niconne", cursive;
+}
+
+#img1 .descriere-pagina {
+    display: flex;
+    float: left;
+    margin-left: 50px;
+    margin-top: 150px;
+
+}
+
+#img2 .descriere-pagina {
+    display: flex;
+    float: right;
+    margin-right: 150px;
+    margin-top: 150px;
+}
+
+
+#img2 .descriere-pagina .imag img{
+//clip-path: polygon(0% 15%, 10% 11%, 15% 0%, 85% 0%, 91% 11%, 100% 15%, 100% 85%, 90% 91%, 85% 100%, 15% 100%, 11% 90%, 0% 85%);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    width: 250px;
+    height: 350px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+#img3 .descriere-pagina {
+    display: flex;
+    float: left;
+    width: 100%;
+    margin-left: 50px;
+    margin-top: 150px;
+}
