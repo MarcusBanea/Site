@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../Style/maya.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Niconne"/>
-    <title>Egypt</title>
+    <title>Maya</title>
 </head>
 <body>
 
