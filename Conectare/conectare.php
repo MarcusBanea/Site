@@ -8,10 +8,10 @@ function connectToDatabase() {
     $connection = mysqli_connect($host, $user, $password, $databbase);
 
     if (mysqli_connect_error()) {
-        echo "Error, cannot connect to database " . mysqli_connect_error();
+        //echo "Error, cannot connect to database " . mysqli_connect_error();
         return 0;
     } else {
-        echo "Connection succesful";
+        //echo "Connection succesful";
         return $connection;
     }
 }

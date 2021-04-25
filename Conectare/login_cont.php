@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <html lang="ro">
 <head>
     <title>Conectare</title>
@@ -15,7 +19,7 @@ $psw = $eroarePsw = "";
 
 include 'verificare_login.php';
 $eroareVerificare=verif_login($eroareNume,$nume,$eroarePsw,$psw); // verificare date intrare
-echo $eroareVerificare;
+//echo $eroareVerificare;
 if ($eroareVerificare == "OK")
 { // verificare existenta in baza de date
     $conn = connectToDatabase();
@@ -27,16 +31,17 @@ if ($eroareVerificare == "OK")
     $rez = mysqli_query($conn,$sql);
     $foundErr = "";
     if (mysqli_num_rows($rez)== 0) {
-        $foundErr = "utilizator NEGASIT,  Nume sau parola ERONAT";
-        echo $foundErr;
+        $foundErr = "Nume sau parola gresita!";
+        //echo $foundErr;
+        header('Location: login_cont.php');
     }
     if (mysqli_num_rows($rez) == 1)
     {
-        $foundErr = "Am gasit";
-        echo $foundErr;
-        $row= mysqli_fetch_assoc($rez);
-        $id_util = $row['id_util'];
-        header('Location: utilizator.php?utilizator='.$name.'&id_util='.$id_util.'&rezultate=nu' );
+        session_start();
+        $_SESSION["loggedin"] = true;
+        $_SESSION["nume"] = $nume;
+        header('Location: ../Index/index.php');
+
     }
 }
 ?>
@@ -56,13 +61,17 @@ if ($eroareVerificare == "OK")
             </label> <br>
             <p><?php echo $eroarePsw; ?></p> <br>
             <input type="submit">
+            <p>
+                <?php
+                    if(empty($foundErr) == false)
+                        echo $foundErr;
+                ?>
+            </p>
         </form>
         <h1>Nu ai cont? <a href="creare_cont.php">Inregistreaza-te acum:</a></h1>
     </div>
 </div>
-<?php
-//echo '<h3 class="error">' . $foundErr . "</h3>";
-?>
+
 
 </body>
 

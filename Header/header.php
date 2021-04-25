@@ -16,7 +16,18 @@
                     <li><a href="../Index/index.php">ACASA</a></li>
                     <li><a href="../Item/itemTest.php">PRODUSE</a></li>
                     <li><a href="../Egypt/Egypt.php">DESPRE</a></li>
-                    <li><a href="../Conectare/login_cont.php">CONECTARE</a></li>
+                    <?php
+                        if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
+                        {?>
+                            <li><a href=""><?php echo $_SESSION["nume"];?></a></li>
+                            <li><a href="../Conectare/logout.php">LOGOUT</a></li>
+                            <?php
+                            //echo "<li>".$_SESSION["nume"]."</li>";
+                            //echo "<a href=../Conectare/logout.php>LOGOUT</a>";
+                        }
+                        else
+                            echo "<li><a href=../Conectare/login_cont.php>CONECTARE</a></li>";
+                        ?>
                 </ul>
             </nav>
         </div>
