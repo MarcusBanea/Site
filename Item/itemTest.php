@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true)
+if (!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true)
     header("Location: ../Conectare/login_cont.php");
 ?>
 
@@ -27,7 +27,7 @@ include "../Header/header.php";
 
             <?php
             $conn = mysqli_connect("localhost", "root", "", "db");
-            $sql = "Select * from " . $_POST["baza"] ;
+            $sql = "Select * from " . $_POST["baza"];
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) { ?>
@@ -37,7 +37,19 @@ include "../Header/header.php";
                                 <?php echo $row["Nume"]; ?>
                             </h1>
                             <p id="suma">
-                                SUMA ACTUALA: <?php echo $row["Pret"]; ?>
+                                <?php
+                                $data_curenta = date('Y-m-d', time());
+                                if ($data_curenta < $row["Data_incheiere"]) {
+                                ?>
+                                    SUMA ACTUALA: <?php echo $row["Pret"]; ?>
+                                <?php
+                                }
+                                else{
+                                    ?>
+                                    LICITATIE INCHEIATA!
+                                    <?php
+                                }
+                                ?>
                             </p>
                             <a href="Item.php?tara=<?php echo $_POST["baza"]; ?>&ID=<?php echo $row["ID"]; ?>">
                                 <img src="<?php echo $row["Link"]; ?>">

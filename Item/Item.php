@@ -1,11 +1,9 @@
 <?php
 session_start();
-if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true)
+if (!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true)
     header("Location: ../Conectare/login_cont.php");
-if($_SERVER["REQUEST_METHOD"] == "POST")
-{
-    if(empty($_POST["pret"]) == false)
-    {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["pret"]) == false) {
 
     }
 }
@@ -52,18 +50,31 @@ include "../Header/header.php";
 
                             </p>
                             <p>
-                                INCEPUT IN: 27 Martie 2021 <br>
-                                SFARSIT IN: 10 Aprilie 2021
+                                INCEPUT IN: <?php echo $row["Data_inceput"]; ?><br>
+                                SFARSIT IN: <?php echo $row["Data_incheiere"]; ?>
                             </p>
-                             <p id="suma">
-                                SUMA ACTUALA: <?php echo $row["Pret"]; ?>
+                            <p id="suma">
+                                <?php
+                                $data_curenta = date('Y-m-d', time());
+                                if ($data_curenta < $row["Data_incheiere"]) {
+                                ?>
+                                    SUMA ACTUALA: <?php echo $row["Pret"]; ?>
+                                <form method="get" action="confirmare_pret.php">
+                                    <input type="number" name="pret" min="<?php echo $row["Pret"]; ?>"><br>
+                                    <input hidden type="checkbox" checked name="tara" value="<?php echo $_GET["tara"]; ?>">
+                                    <input hidden type="checkbox" checked name="id" value="<?php echo $_GET["ID"]; ?>">
+                                    <input type="submit" value="Liciteaza">
+                                </form>
+                            <?php
+                            }
+                            else {
+                                ?>
+                                LICITATIE INCHEIATA!
+                                <?php
+                            }
+                            ?>
                             </p>
-                            <form method="get" action="confirmare_pret.php">
-                                <input type="number" name="pret" min="<?php $row["Pret"]; ?>"><br>
-                                <input hidden type="checkbox" checked name="tara" value="<?php echo $_GET["tara"]; ?>">
-                                <input hidden type="checkbox" checked name="id" value="<?php echo $_GET["ID"]; ?>">
-                                <input type="submit" value="Liciteaza">
-                            </form>
+
 
                         </div>
                     </div>
@@ -73,16 +84,14 @@ include "../Header/header.php";
                         </div>
                     </div>
                     <?php
-                }?>
-            <?php
-            }
-            else {
+                } ?>
+                <?php
+            } else {
                 echo "No Results!";
             }
             $conn->close();
 
             ?>
-
 
 
         </div>
