@@ -1,0 +1,44 @@
+.adauga {
+    width: 100%;
+    height: calc(100vh - 120px);
+    background-color: rgb(23, 26, 33);
+}
+
+.adauga form{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5%;
+}
+
+.adauga form label {
+    padding-left: 5%
+}
+
+.adauga form label {
+    color: white;
+}
+.adauga form .nmOb{
+    width: 400px;
+}
+.adauga form .dinOb{
+    width: 200px;
+}
+.adauga form .mtOb{
+    width: 120px;
+}
+.adauga form .stOb{
+    width: 50px;
+}
+.adauga form .ogOb{
+    width: 80px;
+}
+.adauga form .dimOb{
+    width: 150px;
+}
+.adauga form .dscOb{
+    width: 400px;
+    height: 100px;
+}
+.adauga form .lnkOb{
+    width: 400px;
+}

@@ -19,11 +19,18 @@
                     <?php
                         if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
                         {?>
-                            <li><a href=""><?php echo $_SESSION["nume"];?></a></li>
-                            <li><a href="../Conectare/logout.php">LOGOUT</a></li>
+
                             <?php
-                            //echo "<li>".$_SESSION["nume"]."</li>";
-                            //echo "<a href=../Conectare/logout.php>LOGOUT</a>";
+                            if($_SESSION["nume"] === "admin")
+                            {?>
+                               <li><a href="../Admin/Administrare.php">ADMINISTRARE</a></li> <?php
+                            }
+                            else
+                            {?>
+                                <li><a href=""><?php echo $_SESSION["nume"];?></a></li> <?php
+                            }?>
+                            <li><a href="../Conectare/logout.php">LOGOUT</a></li>
+                        <?php
                         }
                         else
                             echo "<li><a href=../Conectare/login_cont.php>CONECTARE</a></li>";
