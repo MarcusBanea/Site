@@ -65,6 +65,18 @@ include "../Header/header.php";
                                     <input hidden type="checkbox" checked name="id" value="<?php echo $_GET["ID"]; ?>">
                                     <input type="submit" value="Liciteaza">
                                 </form>
+                                <?php
+                                    if($row["Cumparator"] == $_SESSION["nume"])
+                                    {?>
+                                        <h1>Tu ai ultimul pret!</h1>
+                                    <?php
+                                    }
+                                    if($row["Cumparator"] == "")
+                                    { ?>
+                                        <h1>Nimeni nu a licitat inca. Liciteaza chiar acum!</h1>
+                                    <?php
+                                    }
+                                    ?>
                             <?php
                             }
                             else {
