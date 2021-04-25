@@ -22,7 +22,7 @@ $eroareVerificare=verif_login($eroareNume,$nume,$eroarePsw,$psw); // verificare 
 //echo $eroareVerificare;
 if ($eroareVerificare == "OK")
 { // verificare existenta in baza de date
-    $conn = connectToDatabase();
+    $conn = connectToDatabase("proiect");
     // curata variabile de atacuri sql injectio si XSS (cross site sripting)
     $name=curata($nume);
     $passw=curata($psw);

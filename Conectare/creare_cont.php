@@ -51,7 +51,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
 if ($eroareVerificare=="OK")
 { // verificare existenta in baza de date
-    $conn = connectToDatabase();
+    $conn = connectToDatabase("proiect");
     // curata variabile de atacuri sql injectio si XSS (cross site sripting)
     $nume=curata($nume);
     $email=curata($email);

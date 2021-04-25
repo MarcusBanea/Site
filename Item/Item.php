@@ -2,6 +2,13 @@
 session_start();
 if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true)
     header("Location: ../Conectare/login_cont.php");
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
+    if(empty($_POST["pret"]) == false)
+    {
+
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -49,9 +56,14 @@ include "../Header/header.php";
                                 SFARSIT IN: 10 Aprilie 2021
                             </p>
                              <p id="suma">
-                                SUMA ACTUALA: 155500$
+                                SUMA ACTUALA: <?php echo $row["Pret"]; ?>
                             </p>
-                            <input type="number" min="50000" max="10000000"><br>
+                            <form method="get" action="confirmare_pret.php">
+                                <input type="number" name="pret" min="<?php $row["Pret"]; ?>"><br>
+                                <input hidden type="checkbox" checked name="tara" value="<?php echo $_GET["tara"]; ?>">
+                                <input hidden type="checkbox" checked name="id" value="<?php echo $_GET["ID"]; ?>">
+                                <input type="submit" value="Liciteaza">
+                            </form>
 
                         </div>
                     </div>

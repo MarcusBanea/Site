@@ -37,7 +37,7 @@ include "../Header/header.php";
                                 <?php echo $row["Nume"]; ?>
                             </h1>
                             <p id="suma">
-                                SUMA ACTUALA: 155500$
+                                SUMA ACTUALA: <?php echo $row["Pret"]; ?>
                             </p>
                             <a href="Item.php?tara=<?php echo $_POST["baza"]; ?>&ID=<?php echo $row["ID"]; ?>">
                                 <img src="<?php echo $row["Link"]; ?>">

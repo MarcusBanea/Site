@@ -1,9 +1,9 @@
 <?php
-function connectToDatabase() {
+function connectToDatabase($x) {
     $host = "localhost";
     $user = "root";
     $password = "";
-    $databbase = "proiect";
+    $databbase = $x;
 
     $connection = mysqli_connect($host, $user, $password, $databbase);
 
@@ -15,6 +15,8 @@ function connectToDatabase() {
         return $connection;
     }
 }
+
+
 
 /*
 function sanitize($data)
