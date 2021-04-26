@@ -26,43 +26,47 @@ include "../Header/header.php";
             ?>
 
             <?php
-            $conn = mysqli_connect("localhost", "root", "", "db");
-            $sql = "Select * from " . $_POST["baza"];
-            $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) { ?>
-                    <div class="container c1">
-                        <div class="container c11">
-                            <h1>
-                                <?php echo $row["Nume"]; ?>
-                            </h1>
-                            <p id="suma">
-                                <?php
-                                $data_curenta = date('Y-m-d', time());
-                                if ($data_curenta < $row["Data_incheiere"]) {
-                                ?>
-                                    SUMA ACTUALA: <?php echo $row["Pret"]; ?>
-                                <?php
-                                }
-                                else{
-                                    ?>
-                                    LICITATIE INCHEIATA!
+            if (isset($_POST["baza"])) {
+                $conn = mysqli_connect("localhost", "root", "", "db");
+                $sql = "Select * from " . $_POST["baza"];
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) { ?>
+                        <div class="container c1">
+                            <div class="container c11">
+                                <h1>
+                                    <?php echo $row["Nume"]; ?>
+                                </h1>
+                                <p id="suma">
                                     <?php
-                                }
-                                ?>
-                            </p>
-                            <a href="Item.php?tara=<?php echo $_POST["baza"]; ?>&ID=<?php echo $row["ID"]; ?>">
-                                <img src="<?php echo $row["Link"]; ?>">
-                            </a>
+                                    $data_curenta = date('Y-m-d', time());
+                                    if ($data_curenta < $row["Data_incheiere"]) {
+                                        ?>
+                                        SUMA ACTUALA: <?php echo $row["Pret"]; ?>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        LICITATIE INCHEIATA!
+                                        <?php
+                                    }
+                                    ?>
+                                </p>
+                                <a href="Item.php?tara=<?php echo $_POST["baza"]; ?>&ID=<?php echo $row["ID"]; ?>">
+                                    <img src="<?php echo $row["Link"]; ?>">
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <?php
+                        <?php
+                    }
+                } else {
+                    echo "No Results!";
                 }
-            } else {
-                echo "No Results!";
+                $conn->close();
             }
-            $conn->close();
-
+            else
+            {
+                echo "<h1 id='aleg_categ'>&larr; ALEGE O CATEGORIE DE PRODUSE</h1>";
+            }
             ?>
         </div>
     </div>
