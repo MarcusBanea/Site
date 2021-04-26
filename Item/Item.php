@@ -58,9 +58,10 @@ include "../Header/header.php";
                                 $data_curenta = date('Y-m-d', time());
                                 if ($data_curenta < $row["Data_incheiere"]) {
                                 ?>
+                                    <?php $p = $row["Pret"] + 1; ?>
                                     SUMA ACTUALA: <?php echo $row["Pret"]; ?>
                                 <form method="get" action="confirmare_pret.php">
-                                    <input type="number" name="pret" min="<?php echo $row["Pret"]; ?>"><br>
+                                    <input type="number" name="pret" min="<?php echo $p; ?>"><br>
                                     <input hidden type="checkbox" checked name="tara" value="<?php echo $_GET["tara"]; ?>">
                                     <input hidden type="checkbox" checked name="id" value="<?php echo $_GET["ID"]; ?>">
                                     <input type="submit" value="Liciteaza">

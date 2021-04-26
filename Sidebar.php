@@ -11,6 +11,16 @@
         <input name="baza" value="Egypt" type="submit"><br>
         <input name="baza" value="Maya" type="submit"><br>
         <input name="baza" value="India" type="submit"><br>
+        <?php
+            if($_SESSION["nume"] === "admin") {
+                ?>
+                <input name = "baza" value = "China incheiat" type = "submit" ><br>
+                <input name = "baza" value = "Egypt incheiat" type = "submit" ><br>
+                <input name = "baza" value = "Maya incheiat" type = "submit" ><br>
+                <input name = "baza" value = "India incheiat" type = "submit" ><br>
+                <?php
+            }
+        ?>
     </form>
 </div>
 <script type="text/javascript">
