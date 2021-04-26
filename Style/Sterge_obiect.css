@@ -1,0 +1,37 @@
+.sterge {
+    width: 100%;
+    height: calc(120px + calc(25*(280px)));
+    background-color: rgb(23, 26, 33);
+    display: flex;
+    flex-direction: column;
+}
+
+.sterge h1{
+    color: bisque;
+    align-self: center;
+    padding-top: 5%;
+}
+
+.sterge form {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3%;
+
+}
+.sterge form input {
+    align-self: center;
+}
+
+.sterge form label p{
+    color: white;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    padding-top: 3%;
+}
+
+.sterge form img{
+    max-width: 200px;
+    max-height: 200px;
+    align-self: center;
+}

@@ -25,6 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     else
     {
-        header('Location: Adauga.php');
+        header('Location: Administrare.php');
     }
 }

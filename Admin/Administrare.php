@@ -19,8 +19,8 @@ session_start();
         <h1>Ce doresti sa faci?</h1>
         <ul>
             <li><a href="Adauga.php">Adauga un obiect nou</a></li>
-            <li><a href="">Sterge un obiect</a></li>
-            <li><a href="">Modifica datele unui obiect</a></li>
+            <li><a href="Sterge_tara.php">Sterge un obiect</a></li>
+            <li><a href="Modifica_tara">Modifica datele unui obiect</a></li>
             <li><a href="">Trimite un mesaj</a></li>
         </ul>
     </div>
